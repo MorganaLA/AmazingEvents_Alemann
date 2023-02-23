@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Montserrat', sans-serif !important;
+}
+body{
+    max-width: 100%;
+    height: 100%;
+}
+nav{
+    background-color: #d903677e !important;
+}
+.list-group-item{
+   border-color: transparent !important;
+   background-color: transparent !important;
+}
+.card{
+    background-color: #f7cde12d !important; 
+    display: flex !important;
+    border: inset 2px !important;
+    border-color: rgba(0, 0, 0, 0.5) !important;
+    margin: 2% !important;
+    border-radius: 5px !important;
+}
+.card-img-top{
+    width: 100% !important;
+    height: 40% !important;
+    background-size: contain !important;
+}
+.card-body{
+    display: contents !important;
+    width: 100% !important;
+    height: 60% !important;
+    padding: 3% !important;
+}
+.card-text{
+    display: flex !important;
+    height: 40% !important;
+    padding: 3% !important;
+}
+.footer-card{
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: baseline !important;
+}
+.headerul{
+    display: flex;
+    justify-content: right;
+}
+.nav-item{
+    margin: .5rem;
+}
+#headernav{
+    display: flex !important;
+    justify-content: space-between !important;
+    max-width: 100% !important;
+}
+.pagination{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.navlogo{
+    margin-left: 1rem;
+}
+.pagenav{
+    display: flex !important;
+    justify-items: center !important;
+    height: 8rem !important;
+    width: 100% !important;
+    justify-content: space-around;
+    align-content: stretch;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+}
+li>.page-link, .page-item{
+    height: 100% !important;
+    display: flex;
+    align-items: center;
+}
+ul,h1{
+    margin-bottom: 0 !important;
+}
+.page-link{
+    border-color: transparent !important;
+    background-color: #d903677e !important;
+}
+span{
+    color: black;
+    font-size: 3rem;
+}
+.cardform{
+    display: flex !important;
+    justify-content: center !important;
+    width: 40% !important;
+    border-color: transparent !important;
+    margin: 4rem auto 4rem !important;
+}
+.formcontact>button{
+   margin-left: 86% !important;
+}
+.formcontact>div>.form-control{
+    border: 2px solid black !important;
+}
+.navbar.bg-body-tertiary{
+    background-color: rgba(128, 128, 128, 0.2) !important;
+}
