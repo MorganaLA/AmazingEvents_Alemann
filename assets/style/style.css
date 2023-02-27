@@ -57,10 +57,23 @@ html{
        align-content: center;
     }
     .details-div{
+        max-width: 22rem;
         width: 90%;
         margin-top: 2.5rem;
         flex-direction: column !important;
         align-items: center; 
+    }
+    .details-info{
+        text-align: center;
+    }
+    .details-figure{
+        width: 16rem;
+    }
+    .details-img{
+        width: 16rem;
+    }
+    ul{
+        padding-left: 0 !important;
     }
    .navbar-burguer {
     display: inline-block !important;
@@ -233,6 +246,7 @@ td{
     justify-content: center;
 }
 .details-div{
+    max-width: 38rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -247,7 +261,7 @@ td{
     box-shadow: -1px -1px .3rem black;
 }
 .details-img{
-    object-fit: cover;
+  object-fit: cover;
 }
 .details-info{
     flex-direction: column;
