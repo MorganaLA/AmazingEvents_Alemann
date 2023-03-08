@@ -17,7 +17,7 @@ html{
     footer{
         margin-top: auto;
     }
- .navcategory{
+    .navcategory{
     width: 100%;
     margin-inline: auto;
     justify-content: space-between;
@@ -27,18 +27,17 @@ html{
         margin-left: auto;
         align-content: end !important;
     }
-
-.toggle-menu {
+    .toggle-menu { 
+        position: absolute;
         display: block;
         top: .5rem;
-        right: 1rem;
+        right: .5rem;
         width: 3rem;
         cursor: pointer;
         z-index: 3;
     }
 
-.headerul{
-    visibility: visible;
+   .headerul{
     flex-direction: column;
     position: absolute;
     width: fit-content;
@@ -46,11 +45,7 @@ html{
     background-color: rgba(230, 230, 230, 0.9);
     right: 0;
     z-index: 1;
-    top: 3.5rem;
-    }
-    .toggle-menu {
-        position: absolute;
-        display: none;
+    top: 3.4rem;
     }
     .details{
        width: 100%;  
@@ -75,21 +70,27 @@ html{
     ul{
         padding-left: 0 !important;
     }
-   .navbar-burguer {
-    display: inline-block !important;
-    width: 80%;
-}
+    .navbar-burguer {
+        display: inline-block !important;
+        width: 80%;
+    }
 } 
 @media (min-width:1231px) {
     .headerul{
         visibility: visible !important;
     }
     }
+.headerul{
+    visibility: visible;
+    display: flex;
+    justify-content: flex-end;
+        
+    }
 .navbar-burguer{
         display: none;
     }
 .toggle-menu-checkbox-show:checked+.headerul{
-    visibility: hidden;
+   visibility: hidden;
 }
 .toggle-menu {
     position: absolute;
@@ -97,7 +98,7 @@ html{
 }
 .toggle-menu-checkbox-show {
     display: none;
-}
+}   
 body{
     display: flex !important;
     flex-direction: column;
@@ -105,6 +106,7 @@ body{
     min-height: 100%;
 } 
 nav{
+    width: 100%;
     background-color: #d903677e !important;
 }
 .list-group{
@@ -123,6 +125,7 @@ nav{
     width: 45%;
 }
 .card{
+    height: 22rem;
     width: 15.5rem;
     background-color: #f7cde12d !important; 
     display: flex !important;
@@ -133,7 +136,7 @@ nav{
 }
 .card-img-top{
     width: 100% !important;
-    height: 11rem !important;
+    height: 10rem !important;
     background-size: contain !important;
 }
 .card-group{ 
@@ -141,6 +144,7 @@ nav{
     flex-wrap: wrap;
 }
 .card-body{
+    height: 12rem;
     display: contents !important;
     width: 100% !important;
     padding: 3% !important;
@@ -148,23 +152,27 @@ nav{
 .card-body>h5{
     margin-bottom: 0rem;
     margin-top: .4rem;
-    font-size: 1.30rem;
+    font-size: 1.4rem;
 }
 .card-text{
+    font-size: 1.05rem;
+    height: 7.5rem;
     display: flex !important;
-    padding: 3% !important;
+    margin: .5rem;
 } 
 .footer-card{
+    height: 3rem;
     display: flex !important;
     justify-content: space-around !important;
     margin-top: auto;
     align-items: baseline !important;
 }
-.headerul{
-    visibility: visible;
-    display: flex;
-    justify-content: right;
-    
+#pdate{
+    text-align: center;
+    justify-self: end;
+    width: 100%;
+    height: 1rem;
+    margin: .6rem 0 1.4rem;
 }
 .nav-item{
     margin: .5rem;
