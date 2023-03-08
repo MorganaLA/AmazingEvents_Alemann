@@ -9,7 +9,7 @@ html{
     width: 100%;
 }
 
-@media screen and (max-width:1230px){
+@media screen and (max-width:991px){
     html{
         height: 100%;
         width: 100%;
@@ -25,27 +25,7 @@ html{
     .search{
         display: flex;
         margin-left: auto;
-        align-content: end !important;
-    }
-    .toggle-menu { 
-        position: absolute;
-        display: block;
-        top: .5rem;
-        right: .5rem;
-        width: 3rem;
-        cursor: pointer;
-        z-index: 3;
-    }
-
-   .headerul{
-    flex-direction: column;
-    position: absolute;
-    width: fit-content;
-    margin: 0 auto;
-    background-color: rgba(230, 230, 230, 0.9);
-    right: 0;
-    z-index: 1;
-    top: 3.4rem;
+        align-content: flex-end !important;
     }
     .details{
        width: 100%;  
@@ -70,35 +50,56 @@ html{
     ul{
         padding-left: 0 !important;
     }
-    .navbar-burguer {
-        display: inline-block !important;
-        width: 80%;
-    }
-} 
-@media (min-width:1231px) {
     .headerul{
-        visibility: visible !important;
+        width: 12.3rem;
+        padding: .5rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: flex-end;
+        position: absolute;
+        right: 0;
+        top: 4.5rem;
+        z-index: 1;
+        border-radius: 0 0 0 1rem;
+        background-color:  rgba(230, 230, 230, 0.9) !important;
     }
+    .navbar-collapse{
+        display: grid;
+        justify-content: end;
     }
+    .toggle-menu-checkbox-show{
+        display: none;
+    }
+    .navbar-toggler{
+        width: 3.5rem;
+        height: 3.5rem; 
+        margin-right: .5rem;
+        border: 1px solid black !important; 
+        border-radius: 1rem !important; 
+       
+    }
+    .navbar-toggler>span{
+        color: white !important;
+        width: 100%;
+        height: 100%;
+    }
+    .navbar-toggler:focus{  
+        border-color: rgb(122, 122, 122) !important;
+        border-radius: 1rem;
+        box-shadow: 1px 1px 8px 4px rgba(255, 255, 255, 0.5) inset !important;
+        background-color: #d9036757;
+    }
+}
+.toggle-menu-checkbox-show{
+    display: none;
+}
 .headerul{
     visibility: visible;
     display: flex;
     justify-content: flex-end;
         
-    }
-.navbar-burguer{
-        display: none;
-    }
-.toggle-menu-checkbox-show:checked+.headerul{
-   visibility: hidden;
-}
-.toggle-menu {
-    position: absolute;
-    display: block;
-}
-.toggle-menu-checkbox-show {
-    display: none;
-}   
+    }   
 body{
     display: flex !important;
     flex-direction: column;
@@ -121,8 +122,9 @@ nav{
 .search{
     display: flex;
     flex-direction: row;
-    align-content:end;
-    width: 45%;
+    align-content: flex-end;
+    width: 38%; 
+    margin-left: auto;
 }
 .card{
     height: 22rem;
