@@ -1,23 +1,36 @@
-const divEvents = document.getElementById('events')
+eventsCards(data.events)
 
-let cards = ''
+const dataIndex=data.events
 
-for(dataEvent of data.events){
-    cards += ` <div class="card">
-    <img src="${dataEvent.image}" class="card-img-top" alt="Cinema">
-    <div class="card-body">
-      <h5 class="card-title text-center">${dataEvent.name}</h5>
-      <p class="card-text">${dataEvent.description}</p>
-      <p id="pdate" class="text-muted text-center"> Date: ${dataEvent.date}</p>
-      <div class="footer-card">
-      <p class="card-text"><small class="text-muted"> Price: $${dataEvent.price}</small></p>
-      <a href="./details.html" class="btn btn-outline-dark">Details</a>
-      </div>
-    </div>
-  </div>`
-}
+const FilterNavbar = document.forms[0]
+let categoryEventsFilter = dataIndex
+let searchEventsFilter = dataIndex
+let categoriesFilterIndex = []
+let eventsFilter = []
+let searchValue=""
 
-console.log(cards);
+catCheck.addEventListener('change',(e)=>{
+    categoriesFilterIndex = checkboxfilter(e , categoriesFilterIndex, categories);
+    console.log(categoriesFilterIndex)
+    if(searchEventsFilter!=dataIndex){
+      categoryEventsFilter = categoryFilter(searchEventsFilter, categoriesFilterIndex)
+        eventsFilter = searchFilter(categoryEventsFilter, searchValue)
+        eventsCards(eventsFilter)
+    }else{
+      categoryEventsFilter = categoryFilter(dataIndex, categoriesFilterIndex)
+      eventsCards(categoryEventsFilter)
+    }
+})
 
-divEvents.innerHTML = cards;
-  
+document.forms[0].addEventListener('input', (e)=>{
+    searchValue=e.target.value.toLowerCase()
+
+    if (categoryEventsFilter!= dataIndex){
+        searchEventsFilter = searchFilter(dataIndex, searchValue)
+        eventsFilter = categoryFilter(searchEventsFilter,categoriesFilterIndex)
+        eventsCards(eventsFilter)
+    }else{
+        searchEventsFilter = searchFilter(dataIndex, searchValue)
+        eventsCards(searchEventsFilter)
+    }
+})

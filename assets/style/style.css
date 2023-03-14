@@ -20,9 +20,12 @@ html{
     .navcategory{
     width: 100%;
     margin-inline: auto;
-    justify-content: space-between;
+    }
+    .list-group-item{
+        text-align: start !important;
     }
     .search{
+        width: 55% !important;
         display: flex;
         margin-left: auto;
         align-content: flex-end !important;
@@ -31,21 +34,19 @@ html{
        width: 100%;  
        align-content: center;
     }
-    .details-div{
-        max-width: 22rem;
+    #details-div{
+        max-height: 60rem;
+        max-width: 30rem;
         width: 90%;
-        margin-top: 2.5rem;
+        margin: 1rem;
         flex-direction: column !important;
         align-items: center; 
     }
-    .details-info{
-        text-align: center;
-    }
     .details-figure{
-        width: 16rem;
+        width: 80%;
     }
     .details-img{
-        width: 16rem;
+        width: inherit;
     }
     ul{
         padding-left: 0 !important;
@@ -59,7 +60,7 @@ html{
         justify-content: flex-end;
         position: absolute;
         right: 0;
-        top: 4.5rem;
+        top: 4.4rem;
         z-index: 1;
         border-radius: 0 0 0 1rem;
         background-color:  rgba(230, 230, 230, 0.9) !important;
@@ -90,6 +91,9 @@ html{
         box-shadow: 1px 1px 8px 4px rgba(255, 255, 255, 0.5) inset !important;
         background-color: #d9036757;
     }
+    #contactcard{
+        width: 70% !important;
+    }
 }
 .toggle-menu-checkbox-show{
     display: none;
@@ -110,12 +114,20 @@ nav{
     width: 100%;
     background-color: #d903677e !important;
 }
+.navcategory{
+    justify-content: flex-start !important;
+    padding: .1rem 0;
+}
 .list-group{
     display: flex; 
     flex-wrap: wrap !important;
-    justify-content: flex-start;
 }
-.list-group-item{
+ .list-group-item{
+   width: 10rem; 
+   height: 2.3rem; 
+   text-align: center;
+   padding: 0!important; 
+   align-items: first baseline !important;
    border-color: transparent !important;
    background-color:  rgba(230, 230, 230, 0.9) !important;
 }
@@ -123,8 +135,16 @@ nav{
     display: flex;
     flex-direction: row;
     align-content: flex-end;
-    width: 38%; 
+    width: 45%; 
     margin-left: auto;
+}
+#search:active, #search:hover, #search:focus{
+    border: 1px solid;
+    border-color:rgba(0, 0, 0, 0.6) !important;
+    box-shadow: 2px 2px 12px 6px #fc82bd80 inset !important;
+}
+#search::placeholder{
+    color: rgba(56, 56, 56, 0.6);
 }
 .card{
     height: 22rem;
@@ -219,12 +239,17 @@ span{
     color: black;
     font-size: 3rem;
 }
-.cardform{
+#contactcard{
     padding: 1rem;
     display: flex !important;
-    width: 40% !important;
-    border-color: transparent !important;
+    width: 45%;
+    height: 80% !important;
+    border-color: 1px solid rgba(160, 160, 160, 0.2) !important;
     margin: 4rem auto !important;
+}
+.formcontact{
+    width: 70%;
+    margin: auto !important;
 }
 .formcontact>button{
    float: right;
@@ -250,35 +275,43 @@ td{
     width: 100%;
     display: flex;
     height: 100%;
-    min-height: 30rem !important;
+    min-height: 40rem !important;
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
 }
-.details-div{
-    max-width: 38rem;
+#details-div{
+    max-width: 56rem;
     display: flex;
     flex-direction: row;
     align-items: center;
     border: 1px solid black !important;
     gap: 1rem !important;
-    max-height: 30rem;
+    max-height: 60rem;
     padding: 1.5rem;
 }
 .details-figure{
+    width: 90%;
     margin: 0 1rem;
     border: 1px solid black;
     box-shadow: -1px -1px .3rem black;
 }
 .details-img{
+  width: 100%;
   object-fit: cover;
 }
+.details-title{
+    font-size: 2.3rem;
+}
 .details-info{
+    font-size: 1.3rem;
     flex-direction: column;
     width: 90%;
     text-align: center;
 }
 .details-list{
+   line-height: 2.2rem;
    list-style: none; 
 }
 .btn:hover, .btn:active, .active{

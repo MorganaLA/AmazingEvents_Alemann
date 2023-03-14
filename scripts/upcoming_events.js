@@ -1,26 +1,36 @@
-const divEvents = document.getElementById('eventsup')
-const currentDate = Date.parse(data.currentDate);
+const upcomingCards = data.events.filter(event => event.date >= data.currentDate)
 
-let cards = ''
+eventsCards(upcomingCards);
 
-for(dataEvent of data.events){
-    if (Date.parse(dataEvent.date) > currentDate) {
-        cards += ` <div class="card">
-        <img src="${dataEvent.image}" class="card-img-top" alt="Cinema">
-        <div class="card-body">
-          <h5 class="card-title text-center">${dataEvent.name}</h5>
-          <p class="card-text">${dataEvent.description}</p>
-          <p id="pdate" class="text-muted text-center"> Date: ${dataEvent.date}</p>
-          <div class="footer-card">
-          <p class="card-text"><small class="text-muted"> Price: $${dataEvent.price}</small></p>
-          <a href="./details.html" class="btn btn-outline-dark">Details</a>
-          </div>
-        </div>
-      </div>`
-        }};
+const FilterNavbar = document.forms[0]
 
-  
-  
-  divEvents.innerHTML = cards;
+let categoryEventsFilter = upcomingCards
+let searchEventsFilter = upcomingCards
+let categoriesFilterIndex = []
+let eventsFilter = []
+let searchValue=""
 
+catCheck.addEventListener('change',(e)=>{
+    categoriesFilterIndex = checkboxfilter(e , categoriesFilterIndex, categories);
+    if(searchEventsFilter!=upcomingCards){
+      categoryEventsFilter = categoryFilter(searchEventsFilter, categoriesFilterIndex)
+        eventsFilter = searchFilter(categoryEventsFilter, searchValue)
+        eventsCards(eventsFilter)
+    }else{
+      categoryEventsFilter = categoryFilter(upcomingCards, categoriesFilterIndex)
+      eventsCards(categoryEventsFilter)
+    }
+})
 
+document.forms[0].addEventListener('input', (e)=>{
+    searchValue=e.target.value.toLowerCase()
+
+    if (categoryEventsFilter!= upcomingCards){
+        searchEventsFilter = searchFilter(upcomingCards, searchValue)
+        eventsFilter = categoryFilter(searchEventsFilter,categoriesFilterIndex)
+        eventsCards(eventsFilter)
+    }else{
+        searchEventsFilter = searchFilter(upcomingCards, searchValue)
+        eventsCards(searchEventsFilter)
+    }
+})
