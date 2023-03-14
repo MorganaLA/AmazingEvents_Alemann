@@ -244,7 +244,7 @@ span{
     display: flex !important;
     width: 45%;
     height: 80% !important;
-    border-color: 1px solid rgba(160, 160, 160, 0.2) !important;
+    border: 2px solid rgba(160, 160, 160, 0.2) !important;
     margin: 4rem auto !important;
 }
 .formcontact{
@@ -323,5 +323,9 @@ footer{
 ul{
     padding-left: 1rem;
 }
-
+.form-check-input:active, .form-check-input:hover, .form-check-input:focus, .form-check-input:checked{
+    background-color: #d9036757 !important;
+    border-color: #d903675b !important;
+    box-shadow: .2px .2px 0px 4px #fc82bd80 !important;
+}
 
