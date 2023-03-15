@@ -95,7 +95,7 @@ html{
         width: 70% !important;
     }
     #nmfdiv{
-        margin-top: 5% !important;
+        margin-top: 5%;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -105,7 +105,7 @@ html{
         width: 60%;
         margin-top: 1rem !important;
         margin-left: 2.5rem !important;
-        margin-bottom: .5rem;
+        margin-bottom: 5% !important;
     }
     #nmfdiv>h2 {
         margin-left: 0 !important;
@@ -348,7 +348,7 @@ ul{
     box-shadow: .2px .2px 0px 4px #fc82bd80 !important;
 }
 #nmfdiv{
-    margin-top: 7%;
+    margin-top: 5%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -358,6 +358,7 @@ ul{
     width: 60%;
     margin-top: 2rem;
     margin-left: 4.5rem;
+    margin-bottom: 5%;
 }
 #nmfdiv>h2 {
     font-size: 2.5rem;
