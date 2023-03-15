@@ -1,8 +1,16 @@
 const divEvents = document.getElementById('events');
 
 function eventsCards(events) {
+  if(events.length == 0){
+    divEvents.innerHTML = `
+    <div id="nmfdiv">
+    <h2>No matches found!</h2>
+    <img id="nmf" src="../assets/calendar.png" alt="">
+    </div>`
+    return
+}
   let cards = '';
-  for (dataEvent of events) {
+  events.forEach(dataEvent => {
     let card = `
       <div class="card" data-tags="${dataEvent.category}">
         <img src="${dataEvent.image}" class="card-img-top" alt="Cinema">
@@ -17,7 +25,7 @@ function eventsCards(events) {
         </div>
       </div>`;
     cards += card;
-  }
+  });
   divEvents.innerHTML = cards;
   return Array.from(divEvents.children);
 }
