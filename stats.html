@@ -68,16 +68,18 @@
        </header>
        <main>
        
-      <table class="table table-bordered">
-         <tbody class="text-center">
+      <table class="table table-bordered text-center">
+         <thead>
             <tr>
               <th scope="col" colspan="3">Events statistics</th>
             </tr>
             <tr class="fw-bold">
               <td>Event with the highest percentage of attendance</td>
               <td>Event with the lowest percentage of attendance</td>
-              <td>Event with larger capacity</td>
+              <td class="align-text-top">Event with larger capacity</td>
             </tr>
+          </thead>
+            <tbody>
             <tr>
               <td id="highestPer"></td>
               <td id="lowPer"></td>
@@ -87,6 +89,7 @@
       </table>
 
       <table class="table table-bordered text-center">
+        <thead>
             <tr>
               <th scope="col" colspan="3">Upcoming events statistics by category</th>
             </tr>
@@ -95,11 +98,13 @@
               <td>Revenues</td>
               <td>Percentage of attendance</td>
             </tr>
+          </thead>
             <tbody id="categoriesUpT">
             </tbody>
           </table>
 
           <table class="table table-bordered text-center">
+            <thead>
               <tr>
                 <th scope="col" colspan="3">Past events statistics by category</th>
               </tr>
@@ -108,6 +113,7 @@
                 <td>Revenues</td>
                 <td>Percentage of attendance</td>
               </tr>
+            </thead>
               <tbody id="categoriesPstT">              
             </tbody>
          </table>
