@@ -281,14 +281,15 @@ span{
 }
 table{
     margin: 3rem auto !important;
-    width: 80% !important;
+    width: 85% !important;
     border: 2px solid rgba(0, 0, 0, 0.6) !important;
 }
 th{
     background-color: rgba(128, 128, 128, 0.2) !important;  
 }
 td{
-    font-size: .8rem !important;
+    width: 25% !important;
+    font-size: .9rem !important;
 }
 .details{
     width: 100%;
