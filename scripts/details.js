@@ -1,10 +1,20 @@
-let details = data.events.filter( data => data.name ) 
-
 const locationURL = document.location.search
 const param = new URLSearchParams(locationURL)
 let id = param.get("id")
+let details
 
-let details_aux = details.map( data => { 
+async function detailsS(){
+    let dataDet = await getEvents()
+    details = dataDet.events.filter( data => data.name )
+    detailCard(details)
+    detailsAux(details)
+}
+
+detailsS()
+
+function detailsAux(){
+let details_aux 
+    details_aux = details.map( data => {
     let aux = {}
     aux.image = data.image
     aux.name = data.name
@@ -18,11 +28,11 @@ let details_aux = details.map( data => {
     aux.price = data.price
     aux._id = data._id
     return aux
-})
+ })}
 
+
+function detailCard(details_aux){
 let idDetails = details_aux.find(data => data._id == id) 
-
-
 let detail = document.getElementById('details-div') 
 
 detail.innerHTML = `<figure class="details-figure">
@@ -41,4 +51,4 @@ detail.innerHTML = `<figure class="details-figure">
 </ul>
 </article>`
 
-
+}

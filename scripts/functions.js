@@ -1,4 +1,24 @@
 const divEvents = document.getElementById('events');
+let events = [];
+
+async function getEvents() {
+  let events = await fetch('https://mindhub-xj03.onrender.com/api/amazing')
+    .then((response) => response.json())
+    .catch(async ()=>{
+      const response = await fetch('./assets/data/amazing.json');
+      return await response.json();
+    })
+    .then((events) => {
+      return events;
+    })
+    .catch(() => {
+      alert('Try later');
+    });
+    
+    return events;
+    };
+
+getEvents()
 
 function eventsCards(events) {
   if(events.length == 0){
@@ -27,13 +47,13 @@ function eventsCards(events) {
     cards += card;
   });
   divEvents.innerHTML = cards;
-  return Array.from(divEvents.children);
 }
-
-const categories = Array.from(new Set(data.events.map(event => event.category)));
-
 const catCheck = document.getElementById('categories');
-let checks = '';
+let categories
+
+function categoriesChecks(events){
+  categories = Array.from(new Set(events.map(event => event.category)));
+  let checks = '';
 categories.forEach(category => {
   let check = `
     <li class="list-group-item">
@@ -43,8 +63,7 @@ categories.forEach(category => {
   checks += check;
 });
 catCheck.innerHTML = checks;
-
-const cards = eventsCards(data.events);
+}
 
 function checkboxfilter(eventF, array, control){
     if (array==control) {array=[]}
@@ -64,5 +83,3 @@ function categoryFilter(data, arrayCategoriesFilter){
 function searchFilter(array, value){
     return array.filter((event) => event.name.toLowerCase().includes(value))
 }
-
-

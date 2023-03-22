@@ -1,14 +1,22 @@
-const upcomingCards = data.events.filter(event => event.date >= data.currentDate)
-
-eventsCards(upcomingCards);
-
 const FilterNavbar = document.forms[0]
 
-let categoryEventsFilter = upcomingCards
-let searchEventsFilter = upcomingCards
+let categoryEventsFilter
+let searchEventsFilter 
 let categoriesFilterIndex = []
 let eventsFilter = []
 let searchValue=""
+let upcomingCards 
+
+async function upcomingS(){
+    let dataEU = await getEvents()
+    upcomingCards = dataEU.events.filter(event => event.date >= dataEU.currentDate)
+    categoryEventsFilter = upcomingCards
+    searchEventsFilter = upcomingCards
+    eventsCards(upcomingCards)
+    categoriesChecks(upcomingCards)
+}
+
+upcomingS()
 
 catCheck.addEventListener('change',(e)=>{
     categoriesFilterIndex = checkboxfilter(e , categoriesFilterIndex, categories);

@@ -1,14 +1,21 @@
-const pastCards = data.events.filter(event => event.date < data.currentDate)
-
-eventsCards(pastCards);
-
-const FilterNavbar = document.forms[0]
-
-let categoryEventsFilter = pastCards
-let searchEventsFilter = pastCards
+const FilterNavbar = document.forms[0] 
+let categoryEventsFilter
+let searchEventsFilter 
 let categoriesFilterIndex = []
 let eventsFilter = []
 let searchValue=""
+
+async function pastS(){
+    let dataEP = await getEvents()
+    pastCards = dataEP.events.filter(event => event.date < dataEP.currentDate)
+    categoryEventsFilter = pastCards
+    searchEventsFilter = pastCards
+    eventsCards(pastCards)
+    categoriesChecks(pastCards)
+    console.log(pastCards)
+}
+
+pastS()
 
 catCheck.addEventListener('change',(e)=>{
     categoriesFilterIndex = checkboxfilter(e , categoriesFilterIndex, categories);
